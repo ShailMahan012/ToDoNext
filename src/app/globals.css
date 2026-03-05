@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+  h1 {
+    @apply text-2xl font-bold;
+  }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
