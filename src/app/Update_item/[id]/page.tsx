@@ -1,6 +1,11 @@
 import ItemForm from "@/components/ItemForm";
 
-export default function UpdateItem({ params }: { params: { id: number } }) {
-  const item_id = params.id;
-  return <ItemForm title="Update To Do" item_id={item_id} update={true} />;
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function UpdateItem({ params }: Props) {
+  const { id } = await params;
+
+  return <ItemForm title="Update To Do" item_id={Number(id)} update />;
 }
